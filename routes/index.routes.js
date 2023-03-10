@@ -30,6 +30,14 @@ const finalSell = require("../components/finalSell/finalSell.routes");
 const getInvoice= require("../components/invoice/getInvoice/getInvoice.routes");
 const saveInvoice = require("../components/invoice/saveInvoice/saveInvoice.routes");
 
+const register = require("../components/user/register/register.routes.js");
+const getUser = require("../components/user/getUser/getUser.routes");
+const login = require("../components/user/login/login.routes");
+const editUserData= require("../components/user/editUserData/editUserData.routes");
+
+const encrypt = require("../components/util/encrypt/encrypt.routes");
+const decrypt = require("../components/util/decrypt/decrypt.routes"); 
+
 const routes = (app)=>{
     
     app.use('/getProductType', getProductType);
@@ -61,7 +69,16 @@ const routes = (app)=>{
     app.use('/finalSell', finalSell);
     app.use('/getInvoice', getInvoice);
     app.use('/saveInvoice', saveInvoice);
-    
+
+    app.use("/register", register);
+    app.use("/getUser", getUser);
+    app.use("/login", login);
+    app.use("/editUserData", editUserData);
+
+    //rutas solo para desarrollo
+    app.use('/encrypt', encrypt);
+    app.use("/decrypt", decrypt);
+    //borrar lo de arriba
 }
 
 module.exports = routes;
