@@ -116,6 +116,35 @@ Devuelve un arreglo de todas las facturas grabadas.
 Graba la factura en base a los datos pasados.
 
 
+<h3>USER</h3>
+
+/register:
+Registra un nuevo usuario agregando todas las direcciones.
+
+/getUser:
+Devuelve un arreglo de todos los usuarios en la db.
+
+/login:
+Permite el login de usuario devolviendo validation true o false segun el password y el email esten correctos o no
+
+/editUserData:
+Permite modificar la direccion y la imagen de un usuario dado su email.
+
+
+<h3>UTIL</h3>
+
+/encrypt:
+Ruta para uso interno para encriptar dado un msg de entrada.
+
+/decrypt:
+Ruta para uso interno para desencriptar dado un msgcifrado AES.
+
+
+
+
+
+
+
 El API REST corre sobre nodejs, utiliza express y se enlaza a una base de postgresql utilizando queries SQL
 
 
